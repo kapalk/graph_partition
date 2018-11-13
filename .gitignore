@@ -1,0 +1,7 @@
+.idea/*
+
+*.pyc
+
+venv/*
+
+/results.txt
