@@ -4,4 +4,4 @@
 
 venv/*
 
-/results.txt
+results/results.txt
