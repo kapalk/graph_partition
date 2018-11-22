@@ -47,12 +47,14 @@ class Partition:
         current_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         path = os.path.abspath(os.path.join(current_dir, "results", filename))
         with open(path, "w") as f:
-            f.write("# {0} {1} {2} {3}\n".format(filename.split(".")[0], self._number_of_nodes, self._number_of_edges, self.k_partition))
+            f.write("# {0} {1} {2} {3}\n".format(filename.split(".")[0],
+                                                 self._number_of_nodes,
+                                                 self._number_of_edges,
+                                                 self.k_partition))
             f.write('\n'.join('%s %s' % x for x in self._results))
 
 
-
-if __name__:
+if __name__ == "__main__":
     filenames = ["ca-GrQc.txt", "Oregon-1.txt", "soc-Epinions1.txt", "web-NotreDame.txt", "roadNet-CA.txt"]
     root_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -71,6 +73,3 @@ if __name__:
                                  names=["source", "target"])
 
         p = Partition(graph_data, k).execute(filename=output_filename)
-
-
-
